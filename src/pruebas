@@ -1,0 +1,21 @@
+/* for (Carta carta : barajaCompleta) {
+            if (carta.getPalo().equals("♠")) {
+                barajaFinal.add(carta);
+            }
+        }
+        for (Carta carta : barajaCompleta) {
+            if (carta.getPalo().equals("♥")) {
+                barajaFinal.add(carta);
+            }
+        }
+        for (Carta carta : barajaCompleta) {
+            if (carta.getPalo().equals("♦")) {
+                barajaFinal.add(carta);
+            }
+        }
+        for (Carta carta : barajaCompleta) {
+            if (carta.getPalo().equals("♣")) {
+                barajaFinal.add(carta);
+            }
+        }*/
+

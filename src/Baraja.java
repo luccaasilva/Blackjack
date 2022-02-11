@@ -19,16 +19,47 @@ public class Baraja {
         List<Carta> barajada = new LinkedList<>();
         while (!barajaCompleta.isEmpty()) {
             int indiceAleatorio = random.nextInt(barajaCompleta.size());
-            barajada.add(barajaCompleta.get(indiceAleatorio));
+            barajada.add(barajaCompleta.remove(indiceAleatorio));
+
         }
-        barajaCompleta=barajada;
-        for (Carta carta :barajada) {
+        barajaCompleta = barajada;
+    }
+
+    public Carta extraerCarta() {
+        Carta sacar;
+        if (!barajaCompleta.isEmpty()) {
+            sacar = barajaCompleta.remove(0);
+            return sacar;
+        }
+        return null;
+    }
+
+    public List<Carta> ordenada() {
+        List<Carta> barajaFinal = new LinkedList<>();
+        for (String palo : Carta.palos) {
+            for (Carta carta : barajaCompleta) {
+                if (carta.getPalo().equals(palo)) {
+                    barajaFinal.add(carta);
+                }
+            }
+        }
+        return barajaFinal;
+    }
+
+    public void imprimeOrdenada() {
+        for (Carta carta : ordenada()) {
+            System.out.println(carta);
+        }
+    }
+
+    public void imprimeBarajadas() {
+        for (Carta carta : barajaCompleta) {
             System.out.println(carta);
         }
     }
 
     public void imprimeCartas() {
-        for (Carta carta :barajaCompleta) {
+        for (Carta carta : barajaCompleta) {
             System.out.println(carta);
         }
     }
@@ -36,7 +67,7 @@ public class Baraja {
     @Override
     public String toString() {
         return "Baraja{" +
-                "barajaCompleta=" + barajaCompleta +
+                "barajaCompleta=" + barajaF +
                 '}';
     }
 }
